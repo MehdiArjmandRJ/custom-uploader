@@ -1,0 +1,309 @@
+@import "./variables";
+
+.loading-icon {
+  width: 38px;
+  height: 38px;
+
+   svg {
+    width: 100% !important;
+    height: 100% !important;
+    background: transparent !important;
+  }
+}
+.app-button {
+  width: 100%;
+  border: none;
+  color: $basic;
+  min-height: 40px;
+  font-size: 1rem;
+  border-radius: 4px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  font-family: $font-family-num !important;
+
+
+
+  img {
+    height: 34px;
+    width: auto;
+  }
+  &:hover {
+    cursor: pointer;
+    // box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.3);
+  }
+  & .icon {
+    display: flex;
+    align-items: center;
+    margin: 0 8px;
+    &::ng-deep svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  &--disabled {
+    opacity: 0.6;
+    pointer-events: none;
+    background: $disabled !important;
+    color: $basic;
+    .icon {
+      &::ng-deep svg {
+        path {
+          fill: $basic !important;
+        }
+      }
+    }
+  }
+
+  &--primary {
+    background: $primary;
+    padding: 0 15px;
+    color: $basic !important;
+    min-height: 32px;
+    font-size: 12px;
+    .icon {
+      &::ng-deep svg {
+        path {
+          fill: $basic;
+        }
+      }
+    }
+  }
+
+  &--success {
+    background: $success;
+    padding: 0 15px;
+    color: $basic !important;
+    min-height: 32px;
+    font-size: 12px;
+    .icon {
+      &::ng-deep svg {
+        path {
+          fill: $basic;
+        }
+      }
+    }
+  }
+
+  &--danger {
+    background: $danger;
+    padding: 0 15px;
+    color: $basic !important;
+    min-height: 32px;
+    font-size: 12px;
+    .icon {
+      &::ng-deep svg {
+        path {
+          fill: $basic;
+        }
+      }
+    }
+  }
+
+  &--delete {
+    background: $delete;
+    padding: 0 15px;
+    color: $danger !important;
+    min-height: 32px;
+    font-size: 12px;
+    .icon {
+      &::ng-deep svg {
+        path {
+          fill: $danger;
+        }
+      }
+    }
+  }
+
+  &--thirty {
+    background: $thirty;
+    padding: 0 15px;
+    color: $warning !important;
+    min-height: 32px;
+    font-size: 12px;
+    .icon {
+      &::ng-deep svg {
+        path {
+          fill: $warning;
+        }
+      }
+    }
+  }
+
+  &--edit {
+    background: $edit;
+    padding: 0 15px;
+    color: $success !important;
+    min-height: 32px;
+    font-size: 12px;
+    .icon {
+      &::ng-deep svg {
+        path {
+          fill: $success;
+        }
+      }
+    }
+  }
+
+  &--insert {
+    background: $success-button;
+    padding: 0 15px;
+    color: $green !important;
+    min-height: 32px;
+    font-size: 12px;
+    .icon {
+      &::ng-deep svg {
+        path {
+          fill: $green;
+        }
+      }
+    }
+  }
+
+  &--golden {
+    background: $gold;
+    padding: 0 15px;
+    color: $basic !important;
+    min-height: 32px;
+    font-size: 12px;
+    .icon {
+      &::ng-deep svg {
+        path {
+          fill: $basic;
+        }
+      }
+    }
+  }
+
+  &--platinum {
+    background: $platinum;
+    padding: 0 15px;
+    color: $basic !important;
+    min-height: 32px;
+    font-size: 12px;
+    .icon {
+      &::ng-deep svg {
+        path {
+          fill: $basic;
+        }
+      }
+    }
+  }
+
+  &--silver {
+    background: $silver;
+    padding: 0 15px;
+    color: $basic !important;
+    min-height: 32px;
+    font-size: 12px;
+    .icon {
+      &::ng-deep svg {
+        path {
+          fill: $basic;
+        }
+      }
+    }
+  }
+
+  &--bronze {
+    background: $bronze;
+    padding: 0 15px;
+    color: $basic !important;
+    min-height: 32px;
+    font-size: 12px;
+    .icon {
+      &::ng-deep svg {
+        path {
+          fill: $basic;
+        }
+      }
+    }
+  }
+
+  &--silver-outline {
+    box-shadow: none;
+    background: transparent;
+    color: $silver-color !important;
+    border: 1px solid $silver-color;
+    &::ng-deep svg {
+      width: 14px !important;
+      height: 14px !important;
+      path {
+        fill: $silver-color !important;
+      }
+    }
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &--gold-outline {
+    box-shadow: none;
+    background: transparent;
+    color: $golden !important;
+    border: 1px solid $golden;
+    &::ng-deep svg {
+      width: 14px !important;
+      height: 14px !important;
+      path {
+        fill: $golden !important;
+      }
+    }
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &--platinum-outline {
+    box-shadow: none;
+    background: transparent;
+    color: $platinum-color !important;
+    border: 1px solid $platinum-color;
+    &::ng-deep svg {
+      width: 14px !important;
+      height: 14px !important;
+      path {
+        fill: $platinum-color !important;
+      }
+    }
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &--bronze-outline {
+    box-shadow: none;
+    background: transparent;
+    color: $bronze-color !important;
+    border: 1px solid $bronze-color;
+    &::ng-deep svg {
+      width: 14px !important;
+      height: 14px !important;
+      path {
+        fill: $bronze-color !important;
+      }
+    }
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &--outline {
+    box-shadow: none;
+    background: transparent;
+    color: #4a4a4a !important;
+    border: 1px solid $primary;
+    &::ng-deep svg {
+      width: 14px !important;
+      height: 14px !important;
+      path {
+        fill: $primary !important;
+      }
+    }
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}

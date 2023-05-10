@@ -1,0 +1,15 @@
+<libs-uploader
+  ngIf="form"
+  icon="assets/icons/uploader/uploader.svg"
+  text="عکس پروفایل خود را بکشید یا "
+  textSelect="انتخاب کنید"
+  [controlForm]="form"
+  controlName="image"
+  [multiUpload]="false"
+  [icons]="icons"
+  closeIcon="assets/icons/uploader/cross.svg"
+  (onDeleteFailed)="onDeleteFailed()"
+  (onFinishedCropped)="onUpload($event)"
+></libs-uploader>
+
+<button type="button" color="edit" (click)="uploadIMG()">آپلود</button>

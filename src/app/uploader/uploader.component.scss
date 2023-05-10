@@ -1,0 +1,239 @@
+@import "../../theme/_button";
+
+.container-uploader {
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 5000000;
+  background: rgba(0, 0, 0, 0.1);
+  left: 0;
+  transform: translateX(-120%);
+  transition: all ease-in-out 0.3s;
+  font-family: $font-family-num !important;
+
+  .card {
+    background: $basic;
+    padding: 0 2rem;
+    width: 500px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    padding-bottom: 1rem;
+
+    .card-body {
+      .file-size {
+        display: flex;
+        flex-basis: 100%;
+        justify-content: flex-start;
+        padding-right: 1rem;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .row {
+        .settings {
+          position: relative;
+          top: -65px;
+          right: 0;
+          display: flex;
+          gap: 8px;
+          padding-right: 2rem;
+
+          .setting-icon {
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 100%;
+            padding: 0.5rem;
+
+            svg {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+        .text-center {
+          min-width: 360px;
+          image-cropper {
+            height: 300px !important;
+
+            .ngx-ic-cropper {
+              outline: $cropper-outline-color !important;
+            }
+            .ngx-ic-overlay {
+              outline: $cropper-outline-color !important;
+            }
+            .ngx-ic-move {
+              border: 4px solid #0e488d !important;
+            }
+
+            .ngx-ic-square {
+              background: #fff !important;
+              z-index: 1000 !important;
+              border-radius: 100% !important;
+            }
+          }
+          .btn-box {
+            display: flex;
+            gap: 15px;
+            padding: 0 1rem;
+            .submit-btn {
+              max-width: 150px !important;
+              margin: auto !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.uploader {
+  width: 100%;
+  min-height: 100%;
+  background: #fafafa;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  position: relative;
+  border: 4px dashed #e9ecec;
+  &__body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    .icon {
+      margin-left: 8px;
+    }
+
+    .text {
+      font-size: 12px;
+      color: #8a8a8a;
+      margin-bottom: 0;
+    }
+
+    .text-select {
+      color: #008ebb;
+      cursor: pointer;
+      font-size: 12px;
+    }
+  }
+
+  &__preview {
+    text-align: center;
+    width: 100%;
+    grid-row: 3/4;
+    z-index: 1000000;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column-reverse;
+    .single-img {
+      width: 225px;
+      height: 120px;
+      padding: 1rem;
+      position: relative;
+      &:hover {
+        .clear-box {
+          display: block;
+          transition: all ease-in-out 0.3s;
+        }
+      }
+      .clear-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        cursor: pointer;
+        .close-icon {
+          display: flex;
+          height: 100%;
+          transition: all ease-in-out 0.3s;
+          align-items: flex-start;
+          justify-content: flex-start;
+
+          svg {
+            border-radius: 100%;
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+            background: #f6f6f7;
+          }
+        }
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .array-img {
+      justify-content: center;
+      width: unset;
+      height: 110px;
+      display: flex;
+      gap: 15px;
+      overflow: auto;
+      flex-wrap: wrap;
+      .image-box {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        img {
+          width: 90%;
+          height: 90%;
+          border-radius: 4px;
+        }
+
+        .close-icon {
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+          top: -9px;
+          right: -9px;
+          background: #f6f6f7;
+          padding: 6px;
+          opacity: 0.8;
+          cursor: pointer;
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+    .loading {
+      background-color: #fafafa;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: 0.6;
+    }
+  }
+  input {
+    opacity: 0;
+    z-index: 1000000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.isHover {
+  border-color: #8a8a8a !important;
+  transition: all ease-in-out 0.3s;
+}

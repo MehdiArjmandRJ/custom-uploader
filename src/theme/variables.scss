@@ -1,0 +1,102 @@
+//Colors
+$green: #007f00;
+$edit: #ebf5ff;
+$info: #17a2b8;
+$grey: #8a8a8a;
+$delete: #fef3f6;
+$thirty: #ffead6;
+$basic: #ffffff;
+$golden: #f3c501;
+$danger: #a21441;
+$border: #dce0e6;
+$warning: #cd7f32;
+$success: #33bfad;
+$primary: #0e488d;
+$disabled: #dbe0df;
+$edit-icon: #0e488d;
+$secondary: #ebf5ff;
+$background: #f6f6f6;
+$gray-light: #dbe0df;
+$delete-icon: #a21441;
+$revers-basic: #000000;
+$text-color: #121329;
+$silver-color: #b9cdcb;
+$acc-lvl-three: #fe9a3c;
+$acc-lvl-four: #155264;
+$acc-lvl-five: #09c3da;
+$bronze-color: #c56200;
+$platinum-color: #008ebb;
+$danger-delete: #a21441;
+$success-button: #e7feeb;
+
+//Gradients
+$gold: linear-gradient(180deg, #ffd700 0%, #d29700 100%);
+$bronze: linear-gradient(180deg, #cd7f32 0%, #c56200 100%);
+$silver: linear-gradient(180deg, #b9cdcb 0%, #d2d9db 100%);
+$platinum: linear-gradient(180deg, #33bfad 0%, #008ebb 100%);
+$stripeMain: linear-gradient(135deg, #3a42e1 2.88%, #620c90 98.14%);
+$stripeMain: linear-gradient(135deg, #e25544 2.88%, #620c90 98.14%);
+$stripeMain: linear-gradient(69.05deg, #dc7866 2.77%, #f4d19a 94.45%);
+$stripeMain: linear-gradient(47.23deg, #b0325e 3.53%, #faa681 95.41%);
+$roleGradient: linear-gradient(263.02deg, #4acf8c 0%, #75eda6 99.32%);
+$stripeMain: linear-gradient(226.42deg, #1b4963 8.93%, #09152f 110.98%);
+$stripeMain: linear-gradient(132.33deg, #d24074 -0.67%, #1268c3 102.54%);
+$dashboardIcon: linear-gradient(
+  90deg,
+  rgba(14, 72, 141, 1) 0%,
+  rgba(51, 191, 173, 1) 100%
+);
+$stripeMain: linear-gradient(
+  223.53deg,
+  #a5feca 3.65%,
+  #3edceb 31.56%,
+  #2594ff 65.16%,
+  #5533ff 102.22%
+);
+$stripeMain: linear-gradient(
+  51.06deg,
+  #9358f7 0.87%,
+  #7b78f2 25.96%,
+  #6197ee 49.23%,
+  #45b5e9 74.93%,
+  #10d7e2 97.48%
+);
+
+//Box Shadow
+
+$boxShadow: 0 0 20px rgb(5 33 75 / 15%);
+
+//Fonts
+
+$font-family: "VazirWeb";
+$font-family-num: "VazirPersianNum";
+
+$cropper-outline-color: rgba(0, 0, 0, 0.7) solid 100vw;
+
+@font-face {
+  font-family: VazirWeb;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/vazir/Vazir/Vazir.eot");
+  src: url("../assets/fonts/vazir/Vazir/Vazir.eot?#iefix") format("embedded-opentype"),
+    /* IE6-8 */
+      // url('./../assets/fonts/iransans/iransans-Web.woff2') format('woff2'), /* Chrome36+, Opera24+*/
+    url("../assets/fonts/vazir/Vazir/Vazir.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+  // url('./../assets/fonts/iransans/iransans-Web.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: VazirPersianNum;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/vazir/Vazir-persian-num/Vazir-FD/Vazir-FD-WOL.eot");
+  src: url("../assets/fonts/vazir/Vazir-persian-num/Vazir-FD/Vazir-FD-WOL.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-8 */
+      // url('./../assets/fonts/iransans/iransans-Web.woff2') format('woff2'), /* Chrome36+, Opera24+*/
+    url("../assets/fonts/vazir/Vazir-persian-num/Vazir-FD/Vazir-FD-WOL.woff")
+      format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+  // url('./../assets/fonts/iransans/iransans-Web.ttf') format('truetype');
+  font-display: swap;
+}

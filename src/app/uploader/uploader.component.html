@@ -1,0 +1,115 @@
+<div class="uploader" [ngClass]="{ isHover: isHover }">
+    <input
+      type="file"
+      *ngIf="!croppingImage"
+      (change)="fileChangeEvent($event)"
+      (ondrop)="dropped($event)"
+    />
+    <div class="uploader__body">
+      <div class="icon" [inlineSVG]="icon"></div>
+      <span class="text"> {{ text }} </span>
+      <span
+        class="text-select"
+        (mouseenter)="mouseEnter()"
+        (mouseleave)="mouseLeave()"
+      >
+        {{ textSelect }}
+      </span>
+    </div>
+    <div
+      class="uploader__preview"
+      *ngIf="
+        controlForm.controls[controlName].value?.file ||
+        controlForm.controls[controlName].value?.length > 0
+      "
+    >
+      <div class="array-img" *ngIf="multiUpload; else singleUpload">
+        <div
+          class="image-box"
+          *ngFor="
+            let item of controlForm.controls[controlName].value;
+            let i = index
+          "
+        >
+          <img [src]="item.file" />
+          <div
+            (click)="clearFromList(i)"
+            [inlineSVG]="closeIcon"
+            class="close-icon"
+          ></div>
+          <div class="loading" *ngIf="item.loading"></div>
+        </div>
+      </div>
+  
+      <ng-template #singleUpload>
+        <div class="single-img">
+          <img [src]="controlForm.controls[controlName].value.file" />
+          <div class="clear-box">
+            <div
+              (click)="clearForm()"
+              [inlineSVG]="closeIcon"
+              class="close-icon"
+            ></div>
+          </div>
+          <div
+            class="loading"
+            *ngIf="controlForm.controls[controlName].value.loading"
+          ></div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  
+  <div class="container-uploader" [@toggleFade]="handleAnimation()">
+    <div class="card">
+      <div class="card-body">
+        <div class="file-size">
+          حجم فایل :    {{this.fileSize}} 
+        </div>
+        <div class="row" style="margin-top: 15px">
+          <div class="text-center">
+            <image-cropper
+              [format]="format"
+              [transform]="transform"
+              [aspectRatio]="1 / 1"
+              [roundCropper]="roundCropper"
+              [canvasRotation]="canvasRotation"
+              [imageQuality]="imageQuality"
+              [resizeToWidth]="resizeToWidth"
+              [imageChangedEvent]="imageChangedEvent"
+              [maintainAspectRatio]="maintainAspectRatio"
+              (imageLoaded)="imageLoaded()"
+              (cropperReady)="cropperReady($event)"
+              (imageCropped)="imageCropped($event)"
+              (loadImageFailed)="loadImageFailed()"
+            ></image-cropper>
+            <div class="settings">
+              <div class="setting-icon" *ngIf="icons?.rotate" [inlineSVG]="icons.rotate" (click)="rotateRight()"></div>
+              <div class="setting-icon"  *ngIf="icons?.flip" [inlineSVG]="icons.flip" (click)="flipHorizontal()"></div>
+              <div class="setting-icon"  *ngIf="icons?.zoomOut" [inlineSVG]="icons.zoomIn" (click)="zoomOut()"></div>
+              <div class="setting-icon"  *ngIf="icons?.zoomIn" [inlineSVG]="icons.zoomOut"(click)="zoomIn()"></div>
+              <div class="setting-icon"  *ngIf="icons?.reset" [inlineSVG]="icons.reset"(click)="resetImage()"></div>
+            </div>
+            <div class="btn-box">
+              <button
+                type="button"
+                (click)="finishCropped()"
+                class="app-button submit-btn app-button--primary"
+              >
+                آپلود
+              </button>
+  
+              <button
+                type="button"
+                (click)="cancelUpload()"
+                class="app-button submit-btn app-button--primary"
+              >
+                انصراف
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
