@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { AfterViewChecked, ChangeDetectorRef, Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { ImageCroppedEvent } from 'ngx-image-cropper';
 import { Animations } from 'src/shared/animations/uploader.animation';
@@ -9,7 +9,7 @@ import { Animations } from 'src/shared/animations/uploader.animation';
   styleUrls: ['./uploader.component.scss'],
   animations: [Animations.toggleFade],
 })
-export class UploaderComponent {
+export class UploaderComponent implements AfterViewChecked {
   fileSize: any;
   scale: number = 1;
   currentImgUrl: any;
@@ -40,6 +40,14 @@ export class UploaderComponent {
   @Output() onLoadImageFailed = new EventEmitter<any>();
   @Output() onFinishedCropped = new EventEmitter<any>();
 
+  constructor(private ref: ChangeDetectorRef) {
+    // console.log(this.ref);    
+  }
+
+  ngAfterViewChecked(): void {
+    this.ref.detectChanges();
+  }
+
   mouseEnter() {
     this.isHover = true;
   }
@@ -47,6 +55,7 @@ export class UploaderComponent {
   mouseLeave() {
     this.isHover = false;
   }
+
 
   public dropped(event: any) {
     event.files[0].fileEntry.file(
@@ -185,19 +194,24 @@ export class UploaderComponent {
   }
 
   zoomOut() {
-    this.scale -= 0.1;
-    this.transform = {
-      ...this.transform,
-      scale: this.scale,
-    };
+    setTimeout(() => {
+      this.scale -= 0.1;
+      console.log(this.transform);
+      this.transform = {
+        ...this.transform,
+        scale: this.scale,
+      };
+    }, 0);
   }
 
   zoomIn() {
     this.scale += 0.1;
-    this.transform = {
-      ...this.transform,
-      scale: this.scale,
-    };
+    setTimeout(() => {
+      this.transform = {
+        ...this.transform,
+        scale: this.scale,
+      };
+    }, 0);
   }
 
   imageLoaded() {

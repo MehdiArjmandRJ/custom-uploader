@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { OnInit, Component } from '@angular/core';
 import { RxFormGroup } from '@rxweb/reactive-form-validators';
 import { RxFormBuilder } from '@rxweb/reactive-form-validators';
 import { UploaderModel } from 'src/shared/interfaces/form-uploader.interface';
@@ -8,7 +8,7 @@ import { UploaderModel } from 'src/shared/interfaces/form-uploader.interface';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements OnInit {
   title = 'custom-uploader';
   form!: RxFormGroup;
   icons: any = {
@@ -21,7 +21,7 @@ export class AppComponent implements AfterViewInit {
 
   constructor(private _fb: RxFormBuilder) {}
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this.initialForm();
   }
 
